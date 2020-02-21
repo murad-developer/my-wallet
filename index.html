@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>My Wallet</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div class="container">
+		<div class="cards">
+			<div class="cards__header">
+				<h2 class="cards__title">My Wallets</h2>
+				<button class="cards__button" type="button">
+					<img src="img/plus.svg" alt="plus icon" width="25">
+				</button>
+			</div>
+			<div class="cards__list">
+				<a href="#" class="cards__item card card--visa">
+					<p class="card__number">*** *** *** 2562</p>
+					<p class="card__expiry">Valid thru: 08.12.17</p>
+				</a>
+				<a href="#" class="cards__item card card--master">
+					<p class="card__number">*** *** *** 2101</p>
+					<p class="card__expiry">Valid thru: 05.07.19</p>
+				</a>
+				<a href="#" class="cards__item card card--maestro">
+					<p class="card__number">*** *** *** 8335</p>
+					<p class="card__expiry">Valid thru: 01.09.17</p>
+				</a>
+			</div>
+		</div>
+		<div class="notes">
+			<div class="notes__header">
+				<h3 class="notes__title">Current Balance</h3>
+				<p><strong class="notes__current">$729.<sup>00</sup></strong></p>
+			</div>
+			<hr class="notes__line">
+			<ul class="notes__list">
+				<li class="notes__item expense">
+					<div class="notes__info">
+						<h3 class="notes__name">Apple iPhone 7, 128 GB</h3>
+						<p class="notes__details">Electronics #32343424-12 July 2015</p>
+					</div>
+					<div class="notes__amount">$650.<sup>00</sup></div>
+				</li>
+				<li class="notes__item income">
+					<div class="notes__info">
+						<h3 class="notes__name">Funds Added</h3>
+						<p class="notes__details">Payment #5435-11 July 2015</p>
+					</div>
+					<div class="notes__amount">$900.<sup>00</sup></div>
+				</li>
+				<li class="notes__item expense">
+					<div class="notes__info">
+						<h3 class="notes__name">Energy Bill</h3>
+						<p class="notes__details">Other #745237423-11 July 2015</p>
+					</div>
+					<div class="notes__amount">$84.<sup>90</sup></div>
+				</li>
+				<li class="notes__item expense">
+					<div class="notes__info">
+						<h3 class="notes__name">The Eye Cinema Ticket</h3>
+						<p class="notes__details">Entertainment #32343424-10 July 2015</p>
+					</div>
+					<div class="notes__amount">$40.<sup>00</sup></div>
+				</li>
+				<li class="notes__item expense">
+					<div class="notes__info">
+						<h3 class="notes__name">McFood Restaurant</h3>
+						<p class="notes__details">Cafes #32448-10 July 2015</p>
+					</div>
+					<div class="notes__amount">$10.<sup>50</sup></div>
+				</li>
+				<li class="notes__item expense">
+					<div class="notes__info">
+						<h3 class="notes__name">Gas Station</h3>
+						<p class="notes__details">Other #2138453-10 July 2015</p>
+					</div>
+					<div class="notes__amount">$30.<sup>00</sup></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="modal">
+		<div class="modal__content">
+			<button class="modal__close-button" type="button">X</button>
+			<form action="#" class="input__wrapper">
+				<label for="input-number">Card number</label>
+				<input id="input-number" class="modal__input-number" name="number" type="number" maxlength="16" placeholder="Write your card number" maxlength="13" required>
+				<label for="input-date">Card expiry date</label>
+				<input id="input-date" class="input-date" name="date" maxlength="8" type="text" placeholder="Enter the time as in the sample 19.07.1999" required>
+				<button class="input__button" type="submit">Create a card</button>
+			</form>
+		</div>
+	</div>
+	<script src="js/main.js"></script>
+</body>
+</html>
