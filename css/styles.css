@@ -219,6 +219,12 @@ body{
 	border: none;
 	font-size: 14px;
 }
+#error__card{
+	margin-bottom: 20px;
+	padding: 0px;
+	background-color: #ff5f63;
+	font-size: 14px;
+}
 @media (max-width: 950px){
 	.container{
 		margin-top: 0;

@@ -5,6 +5,10 @@ var cardDateInput = document.querySelector('.input-date');
 var inputButton = document.querySelector('.input__button');
 var cardsButton = document.querySelector('.cards__button');
 var closeButton = document.querySelector('.modal__close-button');
+var errorCard = document.querySelector('#error__card')
+var errorText;
+
+
 var escpCloser = function (evt){
 	if (evt.keyCode === 27) {
 		modal.classList.remove('modal-show');
@@ -37,8 +41,10 @@ inputButton.addEventListener('click', function(evt){
 	var cardNumberInputValue = cardNumberInput.value;
 	var cardDateInputValue = cardDateInput.value;
 
+	errorCard.style.padding = '10px';
 	if ((cardNumberInputValue.length >= 13) && (cardDateInputValue.length >= 8)){
 		inputButton.addEventListener('click',function(){
+			
 			var cardItem = document.createElement('a');
 			cardItem.classList.add('cards__item', 'card');
 			var cardNumber = document.createElement('p');
@@ -51,13 +57,20 @@ inputButton.addEventListener('click', function(evt){
 			cardItem.appendChild(cardExpiry);
 			cardList.appendChild(cardItem);
 			alert('success');
-			modal.classList.remove('modal-show');
+			return true;
+
 			document.removeEventListener('keyup',escpCloser);
-			cardNumberInput.value = ' ';
-			cardDateInput.value = ' ';
+			modal.classList.remove('modal-show');
 		});
 	}
-	else if ((cardNumberInputValue.length < 13) && (cardDateInputValue.length < 8)){
-		alert('error');
+	else if(cardNumberInputValue.length < 13){
+		errorText = 'Enter your card number';
+		errorCard.innerHTML = errorText;
+		return false;
+	}
+	else if(cardDateInputValue.length < 8){
+		errorText = 'Enter your card expiry date';
+		errorCard.innerHTML = errorText;
+		return false;
 	}
 });
